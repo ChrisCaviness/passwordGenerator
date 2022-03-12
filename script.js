@@ -26,11 +26,11 @@ var selectedCharacters = [];
 function generatePassword() {
   window.alert("Please answer a few questions to generate your unique password.");
 
-  var passwordLength = 0;
-  while (passwordLength < 8 || passwordLength > 128){
-    passwordLength = window.prompt("How many characters would you like the password to be? Choose between 8 - 128.");
-    alert("You have chosen a password with " + passwordLength + " characters.")
-  } 
+  var passwordLength = window.prompt("How many characters would you like the password to be? Choose between 8 - 128.");
+  // while (passwordLength < 8 || passwordLength > 128){
+  //   passwordLength = window.prompt("How many characters would you like the password to be? Choose between 8 - 128.");
+  //   alert("You have chosen a password with " + passwordLength + " characters.")
+  // } 
 
   console.log(passwordLength);
 
@@ -91,21 +91,18 @@ function generatePassword() {
   randomizedPassword = selectedCharacters;
 
   //Randomzises the collected arrays chosen.
-  for (var i in selectedCharacters) {
-    var pos = Math.round(Math.random() * randomizedPassword.length);
-    randomizedPassword.splice(pos, 0, selectedCharacters[i]);
+  
+  
+
+  var passwordResult = [];
+  while (passwordResult.length < passwordLength) {
+      var pos = Math.round(Math.random() * randomizedPassword.length);
+      passwordResult.push(selectedCharacters[pos]);
   }
+ 
+  window.alert("Your generated password is: \n" + passwordResult.join(''));
 
-  //Takes the randomzied items, and joins them together so they don't have commas seperating them.
-  randomizedPassword = randomizedPassword.join('');
+  console.log("password result: ", passwordResult);
+  return passwordResult.join('');
 
-  //Logs the output from the randomized arrays
-  console.log(randomizedPassword);
-  console.log(randomizedPassword.length);
-  window.alert("Your generated password is: \n" + randomizedPassword);
-
-  //Shows randomized password in text field.
-  return randomizedPassword;
-
-  return generatePassword();
 }

@@ -14,16 +14,9 @@ Christopher Caviness - Password Generator - ReadMe
 
 7. Used a for statement to take the overall selectedCharacters array and randomize it, producing a unique password.
 
-8. Took the randomizedPassword variable, and used randomizedPassword.join('') to remove the commas seperating the characters.
+8. Took the passwordResult variable, and used passwordResult.join('') to remove the commas seperating the characters.
 
 9. Console logged the generated password, and the length of the password, with an additional window.alert to show the password.
 
-10. Return randomizePassword to the screen.
+10. Return passwordResult to the screen.
 
-
-
-
-Notes:
-    I really could not figure out how to get the randomzied password to match the desired password length the user input. I could only get the entire arrays chosen to be added to the password in random order. Makes for a really great password, but without the required specifications. 
-
-    I also couldn't figure out why when you run the generator multiple times, it merely adds the new password on to the end of the old password and continues going on and on. No idea what is happening there.
